@@ -154,3 +154,13 @@ input:-internal-autofill-selected {
 }
 ```
 
+##### 11 视频背景透明
+
+`mix-blend-mode`混合模式中有一种混合模式名为滤色，单词是`screen`，其有一个很有意思的特性表现，那就是黑色和其它元素进行混合的时候表现为透明。
+
+```css
+video {
+    mix-blend-mode: screen;
+}
+```
+
