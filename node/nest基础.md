@@ -77,3 +77,8 @@ nest g service commodity logical
 nest g controller commodity logical
 ```
 
+
+
+掘金这个系列很好：
+
+https://juejin.cn/collection/6845244185432293389
