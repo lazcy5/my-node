@@ -36,8 +36,18 @@ body {
 }
 ```
 
-2  css inspiration (css灵感，各类神奇效果)
+##### 2  css inspiration (css灵感，各类神奇效果)
 
 https://csscoco.com/inspiration/#/
 
 https://github.com/chokcoco/iCSS
+
+##### 3 css-doodle
+
+ **A web component for drawing patterns with CSS** （一个通过CSS绘制图案的Web组件）。**css-doodle** 是通于[Shadow DOM V1](https://link.zhihu.com/?target=https%3A//w3c.github.io/webcomponents/spec/shadow/)和[Custom Elements V1](https://link.zhihu.com/?target=https%3A//html.spec.whatwg.org/multipage/scripting.html%23custom-elements)来构建的。
+
+https://css-doodle.com/
+
+##### 4 图标库
+
+https://fontawesome.dashgame.com/
