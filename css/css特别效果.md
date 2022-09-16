@@ -171,3 +171,46 @@ video {
 }
 ```
 
+##### 12 斜线背景
+
+```css
+.ContentWarning > summary {
+  position: relative;
+  list-style: none; /** 去除默认样式 **/
+  user-select: none; 
+  cursor: pointer;
+  /** 为其添加一个斜线背景 **/
+  --stripe-color: rgb(0 0 0 / 0.1);
+  background-image: repeating-linear-gradient(45deg,
+      transparent,
+      transparent 0.5em,
+      var(--stripe-color) 0.5em,
+      var(--stripe-color) 1em);
+}
+
+/** 通过var变量调整悬停时的颜色样式 **/
+.ContentWarning>summary: hover,
+.ContentWarning>summary: focus {
+  --stripe-color: rgb(150 0 0 / 0.1);
+}
+```
+
+![image-20220913110457429](/Users/louxun-ui-03lv/Library/Application Support/typora-user-images/image-20220913110457429.png)
+
+##### 13 拼色文字
+
+```html
+<svg>
+  <defs>
+    <clipPath id="clipPath">
+        <text x="10" y="50" style="font-size: 20px;">暗黑童话</text>
+    </clipPath>
+  </defs>
+  <g style="clip-path: url(#clipPath);">
+      <rect x="0" y="0" width="60" height="90" style="fill:#000;"/>
+      <rect x="60" y="0" width="60" height="90" style="fill:#cd0000;"/>
+  </g>
+</svg>
+```
+
+![image-20220913155952996](/Users/louxun-ui-03lv/Library/Application Support/typora-user-images/image-20220913155952996.png)
