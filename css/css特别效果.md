@@ -214,3 +214,69 @@ video {
 ```
 
 ![image-20220913155952996](/Users/louxun-ui-03lv/Library/Application Support/typora-user-images/image-20220913155952996.png)
+
+##### 14 字体显示渐变色
+
+```html
+<span class="lig-text">挺你到底</span>
+<span class="lig2">24小时</span>
+.lig-text {
+    display: inline-block;
+    position: relative;
+    color: #fff;
+    overflow: hidden;
+    font-size: 32px;
+    &::before{
+      content: "";
+      display: block;
+      position: absolute;
+      left: 0;
+      top: 0;
+      width: 260%;
+      height: 100%;
+      transform: translateX(0%);
+      background-image: linear-gradient(90deg,transparent,transparent 50%,#1d1d1f 60%),linear-gradient(180deg,#ffb6ff 0%,#b344ff);
+      background-image: linear-gradient(90deg,transparent 50%,#1d1d1f 60%),linear-gradient(180deg,#ffb6ff 0%,#b344ff);
+      background-color: #ffb6ff;
+      mix-blend-mode: darken; // 混合模式
+    }
+  }
+
+.lig2 {
+    color: transparent;
+    -webkit-background-clip: text; //以盒子内的文字作为裁剪区域向外裁剪，文字之外的区域都将被裁剪掉。
+    background-clip: text;
+    background-image: linear-gradient(180deg,#ffb6ff,#b344ff);
+    will-change: transform;
+    padding-top: 0.5px;
+    overflow: hidden;
+    background-color: #ffb6ff 0%;
+    font-size: 64px;
+    line-height: 1.125;
+    font-weight: 600;
+    letter-spacing: .004em;
+    //background-image: linear-gradient(180deg,#ffb6ff,#b344ff 10%,#ae38ff 33%,#ffb6ff 45%,#ffe3ff 50%,#ffb6ff 66%,#b344ff);
+    background-size: 100% 300%;
+    background-position: 50% 0;
+    background-image: linear-gradient(90deg,transparent 50%,#1d1d1f 60%),linear-gradient(180deg,#ffb6ff 0%,#b344ff);
+  }
+```
+
+##### mix-blend-mode
+
+```
+按效果来分可以分为这几类
+
+基础混合模式  normal  利用图层透明度和不透明度来控制与下面的图层混合
+
+降暗混合模式   darken,multiply,color-burn  减色模式，滤掉图像中高亮色，从而达到图像变暗
+
+加亮混合模式  screen,lighten,color-dodge  加色模式，滤掉图像中暗色，从而达到图像变亮
+
+融合混合模式  overlay,soft-light,hard-light   用于不同程度的对上、下两图层的融合
+
+变异混合模式  difference,exclusion,hard-light 用于制作各种变异的图层混合
+
+色彩叠加混合模式    hue,saturation,color,luminosity 根据图层的色相，饱和度等基本属性，完成图层融合 
+```
+
